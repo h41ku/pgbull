@@ -1,0 +1,16 @@
+{
+    "name": "pgbull",
+    "description": "Collection of helpers over package `pg` for most common use-cases",
+    "version": "0.0.1",
+    "author": "h41ku <h41ku.c0de@ya.ru>",
+    "license": "MIT",
+    "type": "module",
+    "main": "src/index.js",
+    "types": "types/index.d.ts",
+    "scripts": {
+        "test": "echo \"Automatically tests are not ready yet.\" && exit 1"
+    },
+    "dependencies": {
+        "pg": "^8.12.0"
+    }
+}
