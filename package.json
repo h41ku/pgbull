@@ -1,7 +1,7 @@
 {
     "name": "pgbull",
     "description": "Collection of helpers over package `pg` for most common use-cases",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "author": "h41ku <h41ku.c0de@ya.ru>",
     "license": "MIT",
     "type": "module",
