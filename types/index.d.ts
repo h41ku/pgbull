@@ -1,4 +1,4 @@
-import pg from 'pg'
+export type PgResult = any;
 
 export interface Logger {
     error(message: any, details?: any): void;
@@ -6,7 +6,7 @@ export interface Logger {
     info(message: any, details?: any): void;
     verbose(message: any, details?: any): void;
     debug(message: any, details?: any): void;
-};
+}
 
 export type PgPoolStatistic = {
     totalCount: number,
@@ -15,7 +15,7 @@ export type PgPoolStatistic = {
 };
 
 export type PgClient = {
-    query: (sql: string, parameters?: any[]) => Promise<pg.Result>,
+    query: (sql: string, parameters?: any[]) => Promise<PgResult>,
     release: () => void
 };
 
@@ -38,8 +38,8 @@ export type PgOptions = {
 
 export declare function getPool(options?: PgOptions): PgPool;
 export declare function verbose(logger: Logger, pool: PgPool): PgPool;
-export declare function transactional(client: PgClient, task: () => Promise<any | void>, mode?: string): PgPool;
+export declare function transactional(client: PgClient, task: () => Promise<any | void>, mode?: string): Promise<any | void>;
 export declare function encodeId(identifier: string): string;
-export declare function fetchAllRows(result: pg.Result): any[];
-export declare function fetchFirstColumn(result: pg.Result): any | null;
-export declare function fetchFirstRow(result: pg.Result): any | null;
+export declare function fetchAllRows(result: PgResult): any[];
+export declare function fetchFirstColumn(result: PgResult): any | null;
+export declare function fetchFirstRow(result: PgResult): any | null;
